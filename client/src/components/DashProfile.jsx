@@ -55,7 +55,7 @@ export default function DashProfile() {
     //     match /{allPaths=**} {
     //       allow read;
     //       allow write: if
-    //       request.resource.size < 2 * 1024 * 1024 &&
+    //       request.resource.size < 3 * 1024 * 1024 &&
     //       request.resource.contentType.matches('image/.*')
     //     }
     //   }
@@ -76,7 +76,7 @@ export default function DashProfile() {
       },
       (error) => {
         setImageFileUploadError(
-          'Could not upload image (File must be less than 2MB)'
+          'Could not upload image (File must be less than 3MB)'
         );
         setImageFileUploadProgress(null);
         setImageFile(null);
