@@ -16,7 +16,6 @@ export default function Search() {
   const [showMore, setShowMore] = useState(false);
 
   const location = useLocation();
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,6 +23,7 @@ export default function Search() {
     const searchTermFromUrl = urlParams.get('searchTerm');
     const sortFromUrl = urlParams.get('sort');
     const categoryFromUrl = urlParams.get('category');
+    
     if (searchTermFromUrl || sortFromUrl || categoryFromUrl) {
       setSidebarData({
         ...sidebarData,
@@ -37,10 +37,12 @@ export default function Search() {
       setLoading(true);
       const searchQuery = urlParams.toString();
       const res = await fetch(`/api/post/getposts?${searchQuery}`);
+      
       if (!res.ok) {
         setLoading(false);
         return;
       }
+      
       if (res.ok) {
         const data = await res.json();
         setPosts(data.posts);
@@ -86,9 +88,11 @@ export default function Search() {
     urlParams.set('startIndex', startIndex);
     const searchQuery = urlParams.toString();
     const res = await fetch(`/api/post/getposts?${searchQuery}`);
+    
     if (!res.ok) {
       return;
     }
+    
     if (res.ok) {
       const data = await res.json();
       setPosts([...posts, ...data.posts]);
@@ -104,7 +108,7 @@ export default function Search() {
     <div className='flex flex-col md:flex-row'>
       <div className='p-7 border-b md:border-r md:min-h-screen border-gray-500'>
         <form className='flex flex-col gap-8' onSubmit={handleSubmit}>
-          <div className='flex   items-center gap-2'>
+          <div className='flex items-center gap-2'>
             <label className='whitespace-nowrap font-semibold'>
               Search Term:
             </label>
@@ -131,9 +135,12 @@ export default function Search() {
               id='category'
             >
               <option value='uncategorized'>Uncategorized</option>
-              <option value='reactjs'>React.js</option>
-              <option value='nextjs'>Next.js</option>
-              <option value='javascript'>JavaScript</option>
+              <option value='travel'>Travel</option>
+              <option value='social'>Social</option>
+              <option value='style'>Style</option>
+              <option value='politics'>Politics</option>
+              <option value='finance'>Finance</option>
+              <option value='food'>Food</option>
             </Select>
           </div>
           <Button type='submit' outline gradientDuoTone='purpleToPink'>
@@ -142,7 +149,7 @@ export default function Search() {
         </form>
       </div>
       <div className='w-full'>
-        <h1 className='text-3xl font-semibold sm:border-b border-gray-500 p-3 mt-5 '>
+        <h1 className='text-3xl font-semibold sm:border-b border-gray-500 p-3 mt-5'>
           Posts results:
         </h1>
         <div className='p-7 flex flex-wrap gap-4'>
