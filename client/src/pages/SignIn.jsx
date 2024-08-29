@@ -53,10 +53,9 @@ export default function SignIn() {
         {/* left */}
         <div className="flex-1">
           <Link to="/" className="font-bold dark:text-white text-4xl">
-            <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">
+            <span className=" px-2 py-1 bg-gradient-to-r from-cyan-400 via-cyan-500 to-blue-500 rounded-lg text-white">
               Bearbubbles
             </span>
-            
           </Link>
           <p className="text-sm mt-5">
             This is a demo project. You can sign in with your email and password or with Google.
@@ -84,7 +83,7 @@ export default function SignIn() {
               />
             </div>
             <Button
-              gradientDuoTone="purpleToPink"
+              gradientDuoTone='cyanToBlue'
               type="submit"
               disabled={loading}
             >
@@ -99,7 +98,7 @@ export default function SignIn() {
             </Button>
             <OAuth />
           </form>
-          <div className="flex gap-2 text-sm mt-5">
+          <div className="flex gap-2 text-teal-500 text-sm mt-5">
             <span>Don't Have an account?</span>
             <Link to="/sign-up" className="text-blue-500">
               Sign Up

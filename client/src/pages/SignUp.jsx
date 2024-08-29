@@ -43,10 +43,10 @@ export default function SignUp() {
         {/* left */}
         <div className='flex-1'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
-            <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
+            <span className='px-2 py-1 bg-gradient-to-r from-cyan-400 via-cyan-500 to-blue-500 rounded-lg text-white
+'>
               Bearbubbles
             </span>
-            
           </Link>
           <p className='text-sm mt-5'>
             This is a demo project. You can sign up with your email and password
@@ -85,7 +85,7 @@ export default function SignUp() {
               />
             </div>
             <Button
-              gradientDuoTone='purpleToPink'
+              gradientDuoTone='cyanToBlue'
               type='submit'
               disabled={loading}
             >
