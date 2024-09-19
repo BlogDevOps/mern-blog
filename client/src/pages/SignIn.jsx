@@ -58,7 +58,7 @@ export default function SignIn() {
             </span>
           </Link>
           <p className="text-sm mt-5">
-            This is a demo project. You can sign in with your email and password or with Google.
+            Let's get you back in. Use Google to sign in!
           </p>
         </div>
         {/* right */}
